@@ -5,17 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="shortcut icon" href="img/candado-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main>
+        <div class="encriptar">
+            <textarea name="texto" class="texto" id="texto" cols="30" rows="10" placeholder="ingresa el texto a encriptar aquí"></textarea>
+        </div>
 
-    </main>
     
+    <div class="condiciones">
+        <p>  <img src="img/advertencia.png"> Solo letras minúsculas y sin acentos.</p>
+    </div>
+    <div class="botones">
+        <button class="boton-encriptar" type="button" onclick="encriptar()">Encriptar</button>
+        <button class="boton-desencriptar" type="button" onclick="desencriptar()">Desencriptar</button>
+    </div>
+    <div class="encriptado">
+        <img src="img/ningunmensaje_2.png" alt="no-se-ha-encontrado-ningun-mensaje" id="personaje">
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+            <h2 id="mensaje-titulo">No se ha encontrado ningun mensaje</h2>
+            <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar.</p>
+         <!-- <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea> -->
+        </div>
+    </div>
+    
+
+</main>
+
     
     <footer>
 
     </footer>
     
 </body>
+<script src="/js/script.js"></script>
 
 </html>
