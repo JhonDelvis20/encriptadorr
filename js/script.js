@@ -19,7 +19,7 @@ function encriptar(){
     personaje.src="./img/ningunmensaje_2.png";
     mesanjeTitulo.textContent = "No se ha encontrado ningun mensaje";
     parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar.";
-    alert("Parece que no ingresaste un texto aun");
+    mostrarAlerta3("Parece que no ingresaste un texto aun");
  }
 }
 function desencriptar(){
@@ -43,6 +43,46 @@ function desencriptar(){
             personaje.src="./img/ningunmensaje_2.png";
             mesanjeTitulo.textContent = "No se ha encontrado ningun mensaje";
             parrafo.textContent="Ingresa el texto que deseas encriptar o desencriptar.";
-            alert("Parece que no ingresaste un texto aun");
+            mostrarAlerta2();
         }
 }
+function mostrarAlerta() {
+    Swal.fire({
+      title: '¡Texto copiado al portapapeles!',
+      html: '<i class="fas fa-smile"></i> Gracias por usar mi encriptador.',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+  function mostrarAlerta2() {
+    Swal.fire({
+      title: '¡ingrese el contenido a desencriptar!',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+  function mostrarAlerta3() {
+    Swal.fire({
+      title: '¡ingrese el contenido a encriptar!',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+  function mostrarAlerta4() {
+    Swal.fire({
+      title: '¡No hay contenido para copiar!',
+      icon: 'warning',
+      confirmButtonText: 'Aceptar'
+    });
+  }
+  
+document.getElementById("boton-copiar").addEventListener("click", function () {
+    var textoCopiado = document.getElementById("texto").value;
+    if (textoCopiado.length > 0) {
+        navigator.clipboard.writeText(textoCopiado).then ;{
+            mostrarAlerta();
+        }
+    }else{
+        mostrarAlerta4();
+    }
+});
